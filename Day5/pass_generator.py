@@ -24,16 +24,34 @@ for i in range(1,nr_numbers +1):
 
 
 #Hard Level - Order of characters randomised:
-def Convert(string):
-    list1 = []
-    list1[:0] = string
-    return list1
+# Method 1
+password_list = []
+for i in range(1,nr_letters +1):
+    password_list.append(random.choice(letters))
 
-pass_sequence = Convert(password)
-random.shuffle(pass_sequence)
+for i in range(1,nr_symbols +1):
+    password_list.append(random.choice(symbols))
 
+for i in range(1,nr_numbers +1):
+     password_list.append(random.choice(numbers))
 
+random.shuffle(password_list)
 rand_pass_gen =""
-for i in pass_sequence:
+for i in password_list:
     rand_pass_gen += i 
 print(rand_pass_gen)
+
+# Method 2 - convert str to list
+# def Convert(string):
+#     list1 = []
+#     list1[:0] = string
+#     return list1
+
+# pass_sequence = Convert(password)
+# random.shuffle(pass_sequence)
+
+
+# rand_pass_gen =""
+# for i in pass_sequence:
+#     rand_pass_gen += i 
+# print(rand_pass_gen)
